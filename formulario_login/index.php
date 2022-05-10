@@ -3,12 +3,16 @@ ini_set('display_erros', 1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 
-print_r($_POST);
 
 if($_POST){
-    $nombre = $_POST["txtNombre"];
-    $correo = $_POST["txtCorreo"];
-    echo $nombre . $correo;
+    $usuario = $_POST["txtUsuario"];
+    $clave = $_POST["txtClave"];
+
+    if($usuario != "" && $clave != ""){
+        header('Location: acceso_confirmado.php');
+    }else{
+        $mensaje = "Valido para usuarios registrados";
+    }
 }
 ?>
 
@@ -25,11 +29,30 @@ if($_POST){
     <main class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center py-5">Formulario</h1>
+                <h1 class=" py-5">Formulario</h1>
             </div>
 
-            <div class="col-12">
-                
+            <div class="col-12 ">
+            <div class="alert alert-danger" role="alert">
+                <?php echo $mensaje ;?>
+            </div>
+                <form method="POST" class="">
+                    <div>
+                        <label for="txtUsuario" class="d-block" id="">Usuario:</label>
+                        <input type="text" id="txtUsuario" class="from-control" name="txtUsuario" >
+                    </div>
+
+                    <div>
+                        <label for="txtClave" class="d-block mt-2" id="txtClave">Clave:</label>
+                    
+                        <input type="password" id="txtClave" name="txtClave" >
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary d-block my-3">ENVIAR</button>
+
+
+                    
+                </form>
             </div>
         </div>
     </main>

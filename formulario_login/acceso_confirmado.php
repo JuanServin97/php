@@ -25,24 +25,13 @@ if($_POST){
     <main class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center py-5">Formulario</h1>
+                <h1 class="text-center py-5">Bienvenid@ al sistema</h1>
             </div>
 
-            <div class="col-12">
-                <form method="POST" action="">
-                    <div>
-                        <label for="text">Nombre:</label>
-                        <input type="text" name="txtNombre" id="txtNombre" class="form-control" require>
-                    </div>
-                    <div>
-                        <label for="txtCorreo" name="txtCorreo" id="txtCorreo" require>Correo</label>
-                        <input type="email" name="txtCorreo" id="txtCorreo" class="form-control" require>
-                    </div>
-
-                    <div class="py-3">
-                        <button class="btn btn-primary text-center" type="submit">Enviar</button>
-                    </div>
-                </form>
+            <div class="col-12">                
+                <div class="alert alert-primary" role="alert">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, nostrum! Odit quam, reiciendis dolorum incidunt consequatur alias esse fugit, iure quibusdam deserunt rerum commodi, animi numquam dolorem repellendus eum eaque?
+                </div>
             </div>
         </div>
     </main>
