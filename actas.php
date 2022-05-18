@@ -11,7 +11,9 @@ $aAlumnos[] = array("nombre" => "Monica Ledesma", "notas" => array(8,9));
 
 function promediar($numeros){
     $suma = 0;
-    $suma += $numeros;
+    foreach ($numeros as $numero) {
+        $suma += $numero;
+    }
     return $suma / count($numeros);
 };
 
@@ -59,7 +61,7 @@ function promediar($numeros){
                     
                 </table>
                 <div class="row">
-                    <div class="">Promedio de la cursada:</div>
+                    <div class="">Promedio de la cursada: <?php  ?></div>
                 </div>
             </div>
         </div>
