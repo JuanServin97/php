@@ -16,7 +16,7 @@ function promediar($numeros){
     }
     return $suma / count($numeros);
 };
-
+$notaTotal = [];
 
 
 ?>
@@ -49,19 +49,24 @@ function promediar($numeros){
                     <?php 
                     
 
-                    foreach ($aAlumnos as $alumno => $value){ ?> 
-                       
+                    foreach ($aAlumnos as $alumno => $value){
+                         ?> 
                     <tr>
                         <td><?php echo $value["nombre"]; ?></td>
                         <td><?php echo $value["notas"][0];?></td>
-                        <td><?php echo $value["notas"][1] ?></td>
-                        <td><?php echo promediar($value["notas"]) ?></td>
+                        <td><?php echo $value["notas"][1]; ?></td>
+                        <td><?php echo promediar($value["notas"]); 
+                        
+                        array_push($notaTotal, promediar($value["notas"]));
+
+                        ?></td>
                     </tr>
-                    <?php }; ?>
+                    <?php 
+                }; ?>
                     
                 </table>
                 <div class="row">
-                    <div class="">Promedio de la cursada: <?php  ?></div>
+                    <div class="">Promedio de la cursada: <?php echo promediar($notaTotal); ?></div>
                 </div>
             </div>
         </div>
